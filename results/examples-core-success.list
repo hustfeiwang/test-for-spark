@@ -1,0 +1,9 @@
+core.DFSReadWriteTest Executed SUCCESS
+core.DFSReadWriteTest Executed SUCCESS
+core.DFSReadWriteTest Executed SUCCESS
+core.HdfsTest Executed SUCCESS
+core.LocalALs Executed SUCCESS
+core.LocalFileLR Executed SUCCESS
+core.SparkHdfsLR Executed SUCCESS
+core.SparkKMeans Executed SUCCESS
+core.SparkPageRank Executed SUCCESS
