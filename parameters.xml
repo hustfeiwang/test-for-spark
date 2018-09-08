@@ -1,0 +1,13 @@
+<project>
+	<core-parameters>
+		<DFSReadWriteTest>$bin/data/lr.txt  $HDFS_DIR/DFSReadWriteTest</DFSReadWriteTest>
+		<HdfsTest>$HDFS_DIR/DFSReadWriteTest</HdfsTest>
+		<LocalALS>1 2 3 4</LocalALS>
+		<LocalFileLR>$bin/data/lr.txt 2</LocalFileLR>
+		<SparkHdfsLR>$HDFS_DIR/LR_DATA  2</SparkHdfsLR>
+		<SparkKMeans>$HDFS_DIR/KMEANS_DATA 2 0.1</SparkKMeans>
+		<SparkPageRank>$HDFS_DIR/PR_DATA  2</SparkPageRank>
+	</core-parameters>
+	<mllib-parameters>
+	</mllib-parameters>
+</project>
