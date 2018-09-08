@@ -4,22 +4,23 @@ bin=`cd $bin;pwd`
 rm $bin/results/examples-mllib-failed.list
 rm $bin/results/examples-mllib-success.list
 rm  $bin/logs/*
-source $bin/test-env.sh
+source $bin/conf.sh
 
+# 清空生成数据目录防止目录已存在
+clearDir
 
-function assert(){
-if [ $? -eq 0 ];then
-   echo  $1 Executed SUCCESS >>$bin/examples-mllib-success.list
-   rm $bin/logs/examples-$1.log
-else
-    echo $1 Executed FAILED  >> $bin/examples-mllib-failed.list
-fi
-}
-function run(){
-$SPARK_HOME/bin/run-example org.apache.spark.examples.$@
-}
-for app in $( cd  $SPARK_HOME/examples/src/main/scala/org/apache/spark/examples/mllib; ls *scala| grep -vE '(AbstractParams)')
+#不需要参数的例子
+for app in $( cd  $SPARK_HOME/examples/src/main/scala/org/apache/spark/examples/mllib; ls *scala| grep -vE '(AbstractParams|BinaryClassification|CosineSimilarity|DecisionTreeRunner|DenseKMeans|FPGrowthExample|GradientBoostedTreesRunner|LDAExample|LinearRegression|MovieLensALS|RegressionMetricsExample|SparseNaiveBayes|StreamingKMeansExample|StreamingLinearRegressionExample|StreamingLogisticRegression|StreamingTestExample|TallSkinnyPCA|TallSkinnySVD)')
 do
-run mllib.${app%.scala} >> $bin/logs/examples-${app%.scala}.log
-assert mllib.${app%.scala}
+runMLlib mllib.${app%.scala} 
 done
+
+#需要参数的例子
+
+for app in BinaryClassification CosineSimilarity DecisionTreeRunner DenseKMeans FPGrowthExample GradientBoostedTreesRunner LDAExample LinearRegression MovieLensALS RegressionMetricsExample SparseNaiveBayes StreamingKMeansExample StreamingLinearRegressionExample StreamingLogisticRegression StreamingTestExample TallSkinnyPCA TallSkinnySVD
+do
+runMLlib mllib.$app 
+done
+
+#清空生成数据目录
+clearDir
