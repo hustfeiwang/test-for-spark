@@ -18,7 +18,9 @@ Spark Core, Sql, MLlib, graphx, Streaming
 ./run-example-core.sh
 ## 4、 测试spark mllib
 ./run-example-mllib.sh
-## 5、测试完数据之后清空测试数据
+## 5、 测试spark graphx
+./run-example-graphx.sh
+## 6、测试完数据之后清空测试数据
 ./clear-data-afterall.sh
 
 
