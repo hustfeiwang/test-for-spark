@@ -4,9 +4,9 @@
 		<HdfsTest>$HDFS_DIR/DFSReadWriteTest</HdfsTest>
 		<LocalALS>1 2 3 4</LocalALS>
 		<LocalFileLR>$bin/data/lr.txt 2</LocalFileLR>
-		<SparkHdfsLR>$HDFS_DIR/LR_DATA_TEST  2</SparkHdfsLR>
-		<SparkKMeans>$HDFS_DIR/KMEANS_DATA_TEST 2 0.1</SparkKMeans>
-		<SparkPageRank>$HDFS_DIR/PR_DATA_TEST  2</SparkPageRank>
+		<SparkHdfsLR>$HDFS_DIR/data/lr.txt  2</SparkHdfsLR>
+		<SparkKMeans>$HDFS_DIR/data/kmeans.txt 2 0.1</SparkKMeans>
+		<SparkPageRank>$HDFS_DIR/data/pr.txt  2</SparkPageRank>
 	</core-parameters>
 	<mllib-parameters>
 		<BinaryClassification> --algorithm LR --regType L2 --regParam 1.0 data/mllib/sample_binary_classification_data.txt</BinaryClassification>
@@ -14,20 +14,14 @@
 		<DecisionTreeRunner>data/mllib/sample_libsvm_data.txt</DecisionTreeRunner>
 		<DenseKMeans>--k 2 data/mllib/kmeans_data.txt</DenseKMeans>
 		<FPGrowthExample>--numPartition 1 data/mllib/sample_fpgrowth.txt </FPGrowthExample>
-		<!-- 不知道使用什么数据 -->
-		<GradientBoostedTreesRunner></GradientBoostedTreesRunner>
 		<LDAExample>data/mllib/sample_lda_data.txt</LDAExample>
 		<LinearRegression>data/mllib/sample_linear_regression_data.txt</LinearRegression>
 		<MovieLensALS>data/mllib/sample_movielens_data.txt</MovieLensALS>
-		<!-- 这个不需要参数 -->
-		<RegressionMetricsExample></RegressionMetricsExample>		
  		<SparseNaiveBayes>data/mllib/sample_libsvm_data.txt</SparseNaiveBayes>
-		<StreamingKMeansExample>data/mllib/kmeans_data.txt data/mllib/streaming_kmeans_data_test.txt 5 3 2</StreamingKMeansExample>
-		<StreamingLinearRegressionExample>data/mllib/streaming_kmeans_data_test.txt data/mllib/streaming_kmeans_data_test.txt</StreamingLinearRegressionExample>
-		<StreamingLogisticRegression>data/mllib/streaming_kmeans_data_test.txt data/mllib/streaming_kmeans_data_test.txt 5 3</StreamingLogisticRegression>
-		<!-- 下面三个需要数据 -->
-		<StreamingTestExample></StreamingTestExample>
-		<TallSkinnyPCA></TallSkinnyPCA>
-		<TallSkinnySVD></TallSkinnySVD>
+		<GradientBoostedTreesRunner>data/mllib/sample_libsvm_data.txt</GradientBoostedTreesRunner>
+		<TallSkinnyPCA>data/sample_tall_skinny_data.txt</TallSkinnyPCA>
+		<TallSkinnySVD>data/sample_tall_skinny_data.txt</TallSkinnySVD>
 	</mllib-parameters>
 </project>
+
+

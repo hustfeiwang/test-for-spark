@@ -35,9 +35,6 @@ assertMLlib $1
 }
 # 清空一些测试中生成的临时数据
 function clearDir(){
-# $HADOOP_HOME/bin/hadoop fs -rmr $HDFS_DIR/LR_DATA_TEST
-# $HADOOP_HOME/bin/hadoop fs -rmr $HDFS_DIR/PR_DATA_TEST
-# $HADOOP_HOME/bin/hadoop fs -rmr $HDFS_DIR/KMEANS_DATA_TEST
 $HADOOP_HOME/bin/hadoop fs -rmr $HDFS_DIR/DFSReadWriteTest
 $HADOOP_HOME/bin/hadoop fs -rmr $HDFS_DIR/myModelPath
 $HADOOP_HOME/bin/hadoop fs -rmr $HDFS_DIR/target
