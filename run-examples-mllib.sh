@@ -19,7 +19,7 @@ done
 
 for app in BinaryClassification CosineSimilarity DecisionTreeRunner DenseKMeans FPGrowthExample GradientBoostedTreesRunner LDAExample LinearRegression MovieLensALS RegressionMetricsExample SparseNaiveBayes StreamingKMeansExample StreamingLinearRegressionExample StreamingLogisticRegression StreamingTestExample TallSkinnyPCA TallSkinnySVD
 do
-runMLlib mllib.$app 
+eval runMLlib mllib.$app 
 done
 
 #清空生成数据目录
