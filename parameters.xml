@@ -22,6 +22,11 @@
 		<TallSkinnyPCA>data/sample_tall_skinny_data.txt</TallSkinnyPCA>
 		<TallSkinnySVD>data/sample_tall_skinny_data.txt</TallSkinnySVD>
 	</mllib-parameters>
+	<graphx-parameters>
+		<Analytics>cc data/mllib/pagerank_data.txt  --numEPart=1</Analytics>
+		<LiveJournalPageRank>data/mllib/pagerank_data.txt --numEPart=1</LiveJournalPageRank>
+		<SynthBenchmark>--app=pagerank  </SynthBenchmark>
+	</graphx-parameters>
 </project>
 
 

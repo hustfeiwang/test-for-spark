@@ -11,3 +11,6 @@ HDFS_DIR=hdfs://netease:9000/user/root
 # HDFS USER_NAME related to hdfs://*/user/USER_NAME
 USER_NAME=$USER
 PARAMETERS=$bin/parameters.xml
+# SPARK-SUBMIT配置
+SPARK_MASTER=yarn
+DEPLOY_MODE=client
