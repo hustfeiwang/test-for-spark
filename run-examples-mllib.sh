@@ -3,7 +3,6 @@ bin=`dirname $0`
 bin=`cd $bin;pwd`
 rm $bin/results/examples-mllib-failed.list
 rm $bin/results/examples-mllib-success.list
-rm  $bin/logs/*
 source $bin/conf.sh
 source $bin/utils.sh
 # 清空生成数据目录防止目录已存在

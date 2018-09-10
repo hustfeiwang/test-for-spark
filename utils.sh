@@ -29,6 +29,14 @@ else
     echo $1 Executed FAILED  >> $bin/results/examples-graphx-failed.list
 fi
 }
+# 判断执行streaming例子时是否出错，并记录
+function assertStreaming(){
+if [ $? -eq 0 ];then
+   echo  $1 Executed SUCCESS >>$bin/results/examples-streaming-success.list
+else
+    echo $1 Executed FAILED  >> $bin/results/examples-streaming-failed.list
+fi
+}
 # 运行core测试例子
 function runCore(){
 $SPARK_HOME/bin/run-example --master $SPARK_MASTER --deploy-mode $DEPLOY_MODE  org.apache.spark.examples.$@  
@@ -43,6 +51,14 @@ assertMLlib $1
 function runGraphx(){
 $SPARK_HOME/bin/run-example --master $SPARK_MASTER --deploy-mode $DEPLOY_MODE org.apache.spark.examples.$@
 assertGraphx $1
+}
+# 运行streaming测试例子
+function runStreaming(){
+$SPARK_HOME/bin/spark-submit --master $SPARK_MASTER --deploy-mode $DEPLOY_MODE --class streamingApp.$1 $bin/target/sparkApp-1.0-SNAPSHOT-jar-with-dependencies.jar $2 $3 $4 $5
+assertStreaming $1
+}
+function runStreamingProducer(){
+$SPARK_HOME/bin/spark-submit --master $SPARK_MASTER --deploy-mode $DEPLOY_MODE --class streamingApp.$1 $bin/target/sparkApp-1.0-SNAPSHOT-jar-with-dependencies.jar $2 $3 $4 $5 $6 &
 }
 # 清空一些测试中生成的临时数据
 function clearDir(){
