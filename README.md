@@ -4,6 +4,7 @@
 Spark Core, MLlib, graphx, Streaming
 - core, mllib, graphx 的测试使用spark examples
 - streaming使用kafka作为数据源
+- sql请使用[TPCDS-FOR-SPARK](https://github.com/yaooqinn/tpcds-for-spark)
 
 # 说明
 在results目录中显示成功和失败的例子
