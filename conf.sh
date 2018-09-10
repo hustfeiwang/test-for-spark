@@ -14,3 +14,13 @@ PARAMETERS=$bin/parameters.xml
 # SPARK-SUBMIT配置
 SPARK_MASTER=yarn
 DEPLOY_MODE=client
+# Streaming APP相关配置，需要自己创建的，且专用于测试
+BOOTSTRAP_SERVERS=localhost:9092
+TOPICS=test
+GROUP=test-for-spark
+#每秒Kafka Producer产生信息数
+MESSAGES_PER_SEC=100
+# 每条信息word数量
+WORDS_PER_MESSAGE=100
+# streaming 应用运行时长，单位为S
+TIMEOUT=100
