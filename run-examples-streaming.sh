@@ -11,4 +11,5 @@ for app in KafkaWordCount KafkaPR KafkaCC KafkaLR KafkaKMeans
 do
 runStreamingProducer ${app}Producer $BOOTSTRAP_SERVERS $TOPICS $MESSAGES_PER_SEC $WORDS_PER_MESSAGE $TIMEOUT
 runStreaming $app $BOOTSTRAP_SERVERS $GROUP $TOPICS $TIMEOUT
+sleep 30
 done

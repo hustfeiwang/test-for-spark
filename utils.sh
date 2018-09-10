@@ -55,7 +55,7 @@ assertGraphx $1
 # 运行streaming测试例子
 function runStreaming(){
 $SPARK_HOME/bin/spark-submit --master $SPARK_MASTER --deploy-mode $DEPLOY_MODE --class streamingApp.$1 $bin/target/sparkApp-1.0-SNAPSHOT-jar-with-dependencies.jar $2 $3 $4 $5
-assertStreaming
+assertStreaming $1
 }
 function runStreamingProducer(){
 $SPARK_HOME/bin/spark-submit --master $SPARK_MASTER --deploy-mode $DEPLOY_MODE --class streamingApp.$1 $bin/target/sparkApp-1.0-SNAPSHOT-jar-with-dependencies.jar $2 $3 $4 $5 $6 &
